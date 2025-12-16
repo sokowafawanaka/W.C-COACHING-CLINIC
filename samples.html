@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="LOGO.png" />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="index.css"/>
+    <title>W.C Coaching Clinic banners&videos</title>
+</head>
+
+<body>
+    <header class="bg-light p-3 mb-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img src="LOGO.png" alt="WC Coaching Clinic Logo" style="height: 50px;">
+            <h1 class="h4 mb-0">W.C. COACHING CLINIC </h1>
+        </div>
+        <nav class="nav justify-content-center mt-3">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="#banners">Banners</a>
+            <a class="nav-link" href="#videos">Videos</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <section id="banners">
+                        <h2 class="text-center mb-4">Banners and Book Stickers</h2>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="SAMPLE1.jpg" alt="W.C Coaching Clinic Banner 1" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#modal1" style="cursor: pointer;">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="hohodza.png" alt="W.C Coaching Clinic Book sticker 1" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#modal2" style="cursor: pointer;">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="ptc.png" alt="W.C Coaching Clinic Book sticker 2" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#modal3" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <section id="videos">
+                        <h1 class="text-center mb-4">Sample Videos</h1>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <video controls class="w-100" style="height: 300px;" title="Area of Squares and Rectangles sample">
+                                    <source src="Area of Squares & Rectanges phone version - Trim - Trim - Trim.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-md-6">
+                                <video controls class="w-100" style="height: 300px;" title="Directed Numbers Sample">
+                                    <source src="Directed Numbers FullHD_1 - Trim - Trim.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals for Full Screen Images -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal1Label">W.C Coaching Clinic Banner 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="SAMPLE1.jpg" alt="W.C Coaching Clinic Banner 1" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="showModal('modal3')">Previous</button>
+                    <button class="btn btn-primary" onclick="showModal('modal2')">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal2Label">W.C Coaching Clinic Banner 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="hohodza.png" alt="W.C Coaching Clinic Book Sticker 1" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="showModal('modal1')">Previous</button>
+                    <button class="btn btn-primary" onclick="showModal('modal3')">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal3Label">W.C Coaching Clinic Banner 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="ptc.png" alt="W.C Coaching Clinic Clinic Book Sticker 2" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="showModal('modal2')">Previous</button>
+                    <button class="btn btn-primary" onclick="showModal('modal1')">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap.js"></script>
+    <script>
+        function showModal(modalId) {
+            // Hide all modals
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                const bsModal = bootstrap.Modal.getInstance(modal);
+                if (bsModal) bsModal.hide();
+            });
+            // Show the target modal
+            const targetModal = new bootstrap.Modal(document.getElementById(modalId));
+            targetModal.show();
+        }
+    </script>
+</body>
+
+</html>
